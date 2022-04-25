@@ -10,4 +10,5 @@ const Employees = ({employees, onToggle }) => {
         </>
     )
 }
+
 export default Employees

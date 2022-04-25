@@ -4,10 +4,11 @@ import './App.css';
 import Button from '../src/components/Button'
 import Employee from './components/Employee';
 import Employees from './components/Employees.js';
+import Clients from './components/Clients';
 
 function App() {
 
-  const [employees, setTask] = useState(
+  const [employees] = useState(
     [
       {
         id: 1,
@@ -31,17 +32,17 @@ function App() {
   const [clients] = useState(
     [
       {
-        id: 1,
+        id: 4,
         email: 'bob@gmail.com',
         fullName: 'bob joe',
       },
       {
-        id: 2,
+        id: 5,
         email: 'google@gmail.com',
         fullName: 'goo gle',
       },
       {
-        id: 3,
+        id: 6,
         email: 'hersay@Hotmail.com',
         fullName: 'im learing dude',
       },
@@ -67,13 +68,23 @@ function onClickRedirectTo(){
     <Button color='green' text='Employees' onClick={onClick} />
     <Button color='green' text='Clients' onClick={onClick} />
     <h1>Or</h1>
-    <Button color='green' text='Sign up' onClick={onClick} />
+    <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
+
+    <div className='container'>
+      <h2>List of C/E</h2>
+    {/* <thestuff /> */}
+    </div>
 
 
 
 
     <div className='container'>
     <Employees employees={employees} onToggle={onClickRedirectTo} />
+    </div>
+
+
+    <div className='container'>
+    <Clients clients={clients} onToggle={onClickRedirectTo} />
     </div>
 
     </>
