@@ -54,39 +54,33 @@ function App() {
   const onClick = () => {
     //change the array to the thing
     console.log("Change array display")
-}
+  }
 
-function onClickRedirectTo(){
-  console.log("i wanna leave this place")
-}
+  function onClickRedirectTo() {
+    console.log("i wanna leave this place")
+  }
 
 
 
   return (
     <>
-    <h1>Log in as a :</h1>
-    <Button color='green' text='Employees' onClick={onClick} />
-    <Button color='green' text='Clients' onClick={onClick} />
-    <h1>Or</h1>
-    <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
-
-    <div className='container'>
-      <h2>List of C/E</h2>
-    {/* <thestuff /> */}
-    </div>
+    <div className='options'>
+      <div className='container'>
+        <h1>Log in as a :</h1>
+        <Button color='green' text='Employees' onClick={onClick} />
+        <Button color='green' text='Clients' onClick={onClick} />
+        <h1>Or</h1>
+        <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
+      </div>
 
 
 
 
-    <div className='container'>
-    <Employees employees={employees} onToggle={onClickRedirectTo} />
-    </div>
-
-
-    <div className='container'>
-    <Clients clients={clients} onToggle={onClickRedirectTo} />
-    </div>
-
+      <div className='container'>
+        <h3>List of Clients</h3>
+        <Clients clients={clients} onToggle={onClickRedirectTo} />
+      </div>
+      </div>
     </>
   );
 }
