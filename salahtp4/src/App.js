@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import { useState } from 'react'
 import './App.css';
 import Button from '../src/components/Button'
-import Employee from './components/Employee';
 import Employees from './components/Employees.js';
 import Clients from './components/Clients';
 
@@ -28,7 +26,6 @@ function App() {
     ]
   )
 
-
   const [clients] = useState(
     [
       {
@@ -49,8 +46,6 @@ function App() {
     ]
   )
 
-
-
   const onClick = () => {
     //change the array to the thing
     console.log("Change array display")
@@ -60,26 +55,26 @@ function App() {
     console.log("i wanna leave this place")
   }
 
-
-
   return (
     <>
-    <div className='options'>
-      <div className='container'>
-        <h1>Log in as a :</h1>
-        <Button color='green' text='Employees' onClick={onClick} />
-        <Button color='green' text='Clients' onClick={onClick} />
-        <h1>Or</h1>
-        <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
-      </div>
+      <div className='options'>
 
+        <div className='container'>
+          <h1>Log in as a :</h1>
+          <Button color='green' text='Employees' onClick={onClick} />
+          <Button color='green' text='Clients' onClick={onClick} />
+          <h1>Or</h1>
+          <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
+        </div>
 
-
-
-      <div className='container'>
-        <h3>List of Clients</h3>
-        <Clients clients={clients} onToggle={onClickRedirectTo} />
-      </div>
+        <div className='container'>
+          <h3>List of Clients</h3>
+          <Clients clients={clients} onToggle={onClickRedirectTo} />
+        </div>
+        <div className='container'>
+          <h3>List of Employees</h3>
+          <Employees employees={employees} onToggle={onClickRedirectTo} />
+        </div>
       </div>
     </>
   );
