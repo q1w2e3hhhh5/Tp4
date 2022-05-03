@@ -3,6 +3,7 @@ import './App.css';
 import Button from '../src/components/Button'
 import Employees from './components/Employees.js';
 import Clients from './components/Clients';
+import { Link } from "react-router-dom";
 
 function App() {
 
@@ -58,18 +59,10 @@ function App() {
   return (
     <>
       <div className='options'>
-
-        <div className='container'>
-          <h1>Log in as a :</h1>
-          <Button color='green' text='Employees' onClick={onClick} />
-          <Button color='green' text='Clients' onClick={onClick} />
-          <h1>Or</h1>
-          <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
-        </div>
-
         <div className='container'>
           <h3>List of Clients</h3>
           <Clients clients={clients} onToggle={onClickRedirectTo} />
+          <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
         </div>
         <div className='container'>
           <h3>List of Employees</h3>
@@ -79,5 +72,4 @@ function App() {
     </>
   );
 }
-
 export default App;
