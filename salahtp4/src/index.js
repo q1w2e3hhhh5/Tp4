@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import Employees from "./routes/Employees";
 import Clients from "./routes/Clients";
 import ListClientComponent from './components/ListClientComponent';
+import ListEmployeeComponent from './components/ListEmployeeComponent';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +19,7 @@ root.render(
       <Route path="Employee/*" element={<Employees />} />
       <Route path="Client/*" element={<Clients />} />
       <Route path="Clients" element={<ListClientComponent />} />
+      <Route path="Employees" element={<ListEmployeeComponent />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
