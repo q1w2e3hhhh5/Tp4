@@ -25,7 +25,7 @@ class ListClientComponent extends Component {
             <>
                 <div className='options'>
                     <div class="container">
-                        <h2>Employee List</h2>
+                        <h2>Clients List</h2>
                         <ul class="responsive-table">
                             <li class="table-header">
                                 <div class="col col-1">Full Name</div>
