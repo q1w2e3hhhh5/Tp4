@@ -12,34 +12,6 @@ code {
     monospace;
 }
 
-.employee {
-  display: inline-block;
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.client {
-  display: inline-block;
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-
-.container {
-  display: inline-block;
-  max-width: 500px;
-  margin: 30px;
-  overflow: auto;
-  min-height: auto;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 5px;
-}
-
 .options {
   margin: 30px auto;
   overflow: auto;

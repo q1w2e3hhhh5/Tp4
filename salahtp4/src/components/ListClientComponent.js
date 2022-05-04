@@ -22,39 +22,35 @@ class ListClientComponent extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Clients List</h2>
-                <div>
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th> Client Full name</th>
-                                <th> Client Email</th>
-                                <th> Login</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.clients.map(
-                                    client =>
-                                        <tr key={client.id}>
-                                            <td> {client.fullName} </td>
-                                            <td> {client.email}</td>
-                                            <td>
+            <>
+                <div className='options'>
+                    <div class="container">
+                        <h2>Employee List</h2>
+                        <ul class="responsive-table">
+                            <li class="table-header">
+                                <div class="col col-1">Full Name</div>
+                                <div class="col col-2">Email</div>
+                                <div class="col col-3">Login</div>
+                            </li>
+                            <div>
+                                {this.state.clients.map(
+                                    client => <li className='table-row' key={client.id}>
+                                        <div class="col col-1" > {client.fullName} </div>
+                                        <div class="col col-2" >{client.email}</div>
+                                        <div class="col col-3" >
                                             <Link to={`/Client/${client.id}`}>
-                                            <Button color='green' text='Log in' />
+                                                <Button color='green' text='Log in' />
                                             </Link>
-                                            </td>
-                                        </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
-
+                                        </div>
+                                    </li>
+                                )}
+                            </div>
+                        </ul>
+                    </div>
                 </div>
+            </>
 
-            </div>)
+        )
 
     }
 

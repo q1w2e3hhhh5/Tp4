@@ -23,39 +23,35 @@ class ListEmployeeComponent extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Employee List</h2>
-                <div>
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th> Employee Full name</th>
-                                <th> Employee Email</th>
-                                <th> Login</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.employees.map(
-                                    employee =>
-                                        <tr key={employee.id}>
-                                            <td> {employee.fullName} </td>
-                                            <td> {employee.email}</td>
-                                            <td>
-                                                <Link to={`/Employee/${employee.id}`}>
-                                                    <Button color='green' text='Log in' />
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
-
+            <>
+                <div className='options'>
+                    <div class="container">
+                        <h2>Employee List</h2>
+                        <ul class="responsive-table">
+                            <li class="table-header">
+                                <div class="col col-1">Full Name</div>
+                                <div class="col col-2">Email</div>
+                                <div class="col col-3">Login</div>
+                            </li>
+                            <div>
+                                {this.state.employees.map(
+                                    employee => <li className='table-row' key={employee.id}>
+                                        <div class="col col-1" > {employee.fullName} </div>
+                                        <div class="col col-2" >{employee.email}</div>
+                                        <div class="col col-3" >
+                                            <Link to={`/Employee/${employee.id}`}>
+                                                <Button color='green' text='Log in' />
+                                            </Link>
+                                        </div>
+                                    </li>
+                                )}
+                            </div>
+                        </ul>
+                    </div>
                 </div>
+            </>
 
-            </div>)
+        )
 
     }
 }
