@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './App.css';
-import Button from '../src/components/Button'
-import Employees from './components/Employees.js';
-import Clients from './components/Clients';
+import Button from './components/Button'
 import { Link } from "react-router-dom";
+import ListClientComponent from './components/ListClientComponent';
 
 function App() {
 
@@ -27,6 +26,7 @@ function App() {
     ]
   )
 
+
   const [clients] = useState(
     [
       {
@@ -47,28 +47,12 @@ function App() {
     ]
   )
 
-  const onClick = () => {
-    //change the array to the thing
-    console.log("Change array display")
-  }
-
-  function onClickRedirectTo() {
-    console.log("i wanna leave this place")
-  }
-
   return (
     <>
-      <div className='options'>
-        <div className='container'>
-          <h3>List of Clients</h3>
-          <Clients clients={clients} onToggle={onClickRedirectTo} />
-          <Button color='green' text='Sign up' onClick={onClickRedirectTo} />
-        </div>
-        <div className='container'>
-          <h3>List of Employees</h3>
-          <Employees employees={employees} onToggle={onClickRedirectTo} />
-        </div>
-      </div>
+      <Link to={`/Clients`}>
+        <Button color='green' text='List Clients' />
+      </Link>
+      <ListClientComponent/>
     </>
   );
 }

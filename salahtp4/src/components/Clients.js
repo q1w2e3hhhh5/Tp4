@@ -1,11 +1,14 @@
 import Client from './Client'
-const Clients = ({clients, onToggle }) => {
+import { Link } from "react-router-dom";
+
+const Clients = ({ clients }) => {
     return (
         <>
             {clients.map((client) => (
-                <Client key={client.id}
-                client={client} 
-                onToggle={onToggle}/>
+                <Link to={`/Client/${client.id}`}>
+                    <Client key={client.id}
+                        client={client} />
+                </Link>
             ))}
         </>
     )

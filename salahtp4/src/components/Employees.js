@@ -1,11 +1,15 @@
 import Employee from './Employee'
-const Employees = ({employees, onToggle }) => {
+import { Link } from "react-router-dom";
+
+const Employees = ({ employees }) => {
     return (
         <>
             {employees.map((employee) => (
-                <Employee key={employee.id}
-                employee={employee} 
-                onToggle={onToggle}/>
+                <Link to={`/Employee/${employee.id}`}>
+                    <Employee key={employee.id}
+                        employee={employee}
+                        />
+                </Link>
             ))}
         </>
     )
