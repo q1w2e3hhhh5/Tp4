@@ -20,7 +20,6 @@ class ListEmployeeComponent extends Component {
         });
     }
 
-
     render() {
         return (
             <>
@@ -50,7 +49,6 @@ class ListEmployeeComponent extends Component {
                     </div>
                 </div>
             </>
-
         )
 
     }

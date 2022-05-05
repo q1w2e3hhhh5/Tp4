@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import EmployeeService from '../services/EmployeeService';
-import { Link } from "react-router-dom";
-import Button from './Button';
 import '../App.css'
 
 class ListClientComponent extends Component {
@@ -12,13 +10,6 @@ class ListClientComponent extends Component {
         this.state = {
             clients: []
         }
-
-        this.addClient = this.addClient.bind(this);
-
-    }
-
-    addClient(){
-        this.props.history.push(`/CreateClient`);
     }
 
     componentDidMount() {
@@ -37,34 +28,24 @@ class ListClientComponent extends Component {
                             <li class="table-header">
                                 <div class="col col-1">Full Name</div>
                                 <div class="col col-2">Email</div>
-                                <div class="col col-3">Login</div>
+                                <div class="col col-2">Action</div>
                             </li>
                             <div>
                                 {this.state.clients.map(
                                     client => <li className='table-row' key={client.id}>
                                         <div class="col col-1" > {client.fullName} </div>
                                         <div class="col col-2" >{client.email}</div>
-                                        <div class="col col-3" >
-                                            <Link to={`/Client/${client.id}`}>
-                                                <Button color='green' text='Log in' />
-                                            </Link>
-                                        </div>
+                                        <div class="col col-3" >delete/update</div>
                                     </li>
                                 )}
                             </div>
                         </ul>
                     </div>
-                    <Link to={`/CreateClient`}>
-                        <Button color='green' text='Sign up' onClick={this.addClient} />
-                    </Link>
                 </div>
             </>
-
         )
-
     }
-
 }
-
+/* must add delete client and create client */
 
 export default ListClientComponent

@@ -1,4 +1,5 @@
 import Button from '../../src/components/Button';
+import { Link } from "react-router-dom";
 import '../App.css';
 
 
@@ -8,7 +9,10 @@ export default function employees() {
         <>
         <div className='options'>
         <h2>employee</h2>
-        <Button color='green' text='List of Clients' />
+        <Link to={`/ClientsWLogin`}><Button color='green' text='List of Clients' /></Link>
+
+        
+
         <Button color='green' text='Search Client' />
         <Button color='green' text='Search Clients Borrows' />
         <Button color='green' text='Create Document' />

@@ -8,6 +8,8 @@ import Employees from "./routes/Employees";
 import Clients from "./routes/Clients";
 import ListClientComponent from './components/ListClientComponent';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
+import CreateClient from './components/CreateClient';
+import ListClients from './components/ListClients';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,11 +17,13 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" exact element={<App />} />
       <Route path="Employee/*" element={<Employees />} />
       <Route path="Client/*" element={<Clients />} />
       <Route path="Clients" element={<ListClientComponent />} />
       <Route path="Employees" element={<ListEmployeeComponent />} />
+      <Route path="CreateClient" element={<CreateClient />} />
+      <Route path="ClientsWLogin" element={<ListClients />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

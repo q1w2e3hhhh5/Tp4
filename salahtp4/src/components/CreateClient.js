@@ -1,0 +1,81 @@
+import React, { Component } from 'react';
+import Button from './Button';
+import { Link } from "react-router-dom";
+
+class CreateClient extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            fullName: "",
+            email: "",
+            password: ""
+        }
+
+        this.changeEmailHandler = this.changeEmailHandler.bind(this);
+        this.changeFullNameHandler = this.changeFullNameHandler.bind(this);
+        this.changePasswordHandler = this.changePasswordHandler.bind(this);
+        this.saveClient = this.saveClient.bind(this);
+    }
+
+
+    changeFullNameHandler = (event) => {
+        this.setState({ fullName: event.target.value });
+    }
+
+    changeEmailHandler = (event) => {
+        this.setState({ email: event.target.value });
+    }
+
+    changePasswordHandler = (event) => {
+        this.setState({ password: event.target.value });
+    }
+
+
+    saveClient = (e) => {
+        e.preventDefault();
+
+        let client = { fullName: this.state.fullName, email: this.state.email, password: this.state.password };
+        console.log("client=>" + JSON.stringify(client))
+
+
+    }
+
+
+    render() {
+        return (
+            <div className='options'>
+                <div className='container'>
+                    <div>
+                        <h3>Add Client</h3>
+                        <form>
+                            <div>
+                                <label>Full name:</label>
+                                <input placeholder='name' name='fullName'
+                                    value={this.state.fullName} onChange={this.changeFullNameHandler} />
+                            </div>
+                            <div>
+                                <label>Email:</label>
+                                <input placeholder='email' name='email'
+                                    value={this.state.email} onChange={this.changeEmailHandler} />
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input placeholder='***' name='password'
+                                    value={this.state.password} onChange={this.changePasswordHandler} />
+                            </div>
+                        </form>
+
+                        <Button color='green' text='Save' onClick={this.saveClient} />
+                        
+                        <Link to={`/Clients`}><Button color='red' text='Cancel' /></Link>
+
+                    </div>
+                </div >
+            </div >
+        )
+    }
+}
+
+
+export default CreateClient
