@@ -15,7 +15,7 @@ class ListClientComponent extends Component {
         this.addClient = this.addClient.bind(this);
     }
 
-    addClient(){
+    addClient() {
         this.props.history.push(`/CreateClient`);
     }
 

@@ -12,6 +12,7 @@ import CreateClient from './components/CreateClient';
 import ListClients from './components/ListClients';
 import ListDocumentsForClients from './components/ListDocumentsForClients';
 import ListDocumentsForEmployees from './components/ListDocumentsForEmployees';
+import CreateDocument from './components/CreateDocument';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,6 +29,7 @@ root.render(
         <Route path="ClientsWLogin" element={<ListClients />} />
         <Route path="DocumentsForClient" element={<ListDocumentsForClients />} />
         <Route path="DocumentsForEmployee" element={<ListDocumentsForEmployees />} />
+        <Route path="CreateDocument" exact element={<CreateDocument />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -12,7 +12,11 @@ export default function employees() {
                 <Link to={`/ClientsWLogin`}><Button color='green' text='List of Clients' /></Link>
 
                 <Button color='green' text='Recherché Client' />
-                <Button color='green' text='Crée un Document' />
+
+                <Link to={`/CreateDocument`}>
+                    <Button color='green' text='Crée un Document' />
+                </Link>
+
                 <Button color='green' text='Recherché un Document' />
 
                 <Link to={`/DocumentsForEmployee`}>
