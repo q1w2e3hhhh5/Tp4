@@ -1,19 +1,20 @@
 import Button from '../../src/components/Button';
 import '../App.css';
+import { Link } from "react-router-dom";
 
 
 
 export default function clients() {
     return (
         <>
-        <div className='options'>
-        <h2>clients</h2>
-        <Button color='green' text='List of borrows' />
-        <Button color='green' text='Borrow Document' />
-        <Button color='green' text='Return Document' />
-        <Button color='green' text='Search Documents' />
-        <Button color='green' text='All documents' />    
-        </div>   
+            <div className='options'>
+                <h2>clients</h2>
+                <Button color='green' text='Mes Documents' />
+
+                <Link to={`/Documents`}>
+                    <Button color='green' text='Tout Les Documents De la Bibliothéque' />
+                </Link>
+            </div>
         </>
 
 

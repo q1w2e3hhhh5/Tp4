@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from './Button';
 import { Link } from "react-router-dom";
 import EmployeeService from '../services/EmployeeService';
+import '../App.css';
 
 class CreateClient extends Component {
     constructor(props) {
@@ -32,7 +33,6 @@ class CreateClient extends Component {
         this.setState({ password: event.target.value });
     }
 
-
     saveClient = (e) => {
         e.preventDefault();
         let client = { fullName: this.state.fullName, email: this.state.email, password: this.state.password };
@@ -46,7 +46,6 @@ class CreateClient extends Component {
 
     }
 
-
     render() {
         return (
             <div className='options'>
@@ -54,26 +53,23 @@ class CreateClient extends Component {
                     <div>
                         <h3>Add Client</h3>
                         <form>
-                            <div>
+                            <div className='block'>
                                 <label>Full name:</label>
                                 <input placeholder='name' name='fullName'
                                     value={this.state.fullName} onChange={this.changeFullNameHandler} />
                             </div>
-                            <div>
+                            <div className='block'>
                                 <label>Email:</label>
                                 <input placeholder='email' name='email'
                                     value={this.state.email} onChange={this.changeEmailHandler} />
                             </div>
-                            <div>
+                            <div className='block'>
                                 <label>Password:</label>
                                 <input placeholder='***' name='password'
                                     value={this.state.password} onChange={this.changePasswordHandler} />
                             </div>
                         </form>
-
-
                         <Button color='green' text='Save' onClick={this.saveClient} />
-
                         <Link to={`/Clients`}><Button color='red' text='Cancel' /></Link>
 
                     </div>

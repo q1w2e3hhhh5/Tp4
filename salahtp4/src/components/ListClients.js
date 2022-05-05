@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import EmployeeService from '../services/EmployeeService';
 import '../App.css'
+import Button from './Button';
+import { Link } from "react-router-dom";
 
 class ListClientComponent extends Component {
 
@@ -41,6 +43,10 @@ class ListClientComponent extends Component {
                             </div>
                         </ul>
                     </div>
+                    <Link to={`/CreateClient`}>
+                        <Button color='green' text='Add Client' onClick={this.addClient} />
+                    </Link>
+
                 </div>
             </>
         )
