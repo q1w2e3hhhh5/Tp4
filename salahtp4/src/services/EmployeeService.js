@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const CLIENTS_API_BASE_URL = "http://localhost:8085/api/v1/Clients";
 const EMPLOYEES_API_BASE_URL = "http://localhost:8085/api/v1/Employees";
-const DOCUMETNS_API_BASE_URL = "http://localhost:8085/api/v1/Documents";
+const DOCUMENTS_API_BASE_URL = "http://localhost:8085/api/v1/Documents";
 
 class EmployeeService {
 
@@ -19,8 +19,12 @@ class EmployeeService {
         return axios.post(CLIENTS_API_BASE_URL, client);
     }
 
+    createBook(book){
+        return axios.post(DOCUMENTS_API_BASE_URL, book)
+    }
+
     getDocuments() {
-        return axios.get(DOCUMETNS_API_BASE_URL);
+        return axios.get(DOCUMENTS_API_BASE_URL);
     }
 
 

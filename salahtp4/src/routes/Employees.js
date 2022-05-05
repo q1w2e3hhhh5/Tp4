@@ -13,9 +13,13 @@ export default function employees() {
 
                 <Button color='green' text='Recherché Client' />
 
-                <Link to={`/CreateDocument`}>
-                    <Button color='green' text='Crée un Document' />
+                <Link to={`/CreateBook`}>
+                    <Button color='green' text='Crée un Livre' />
                 </Link>
+
+                <Button color='green' text='Crée un Dvd' />
+                <Button color='green' text='Crée un Cd' />
+
 
                 <Button color='green' text='Recherché un Document' />
 
