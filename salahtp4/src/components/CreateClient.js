@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import { Link } from "react-router-dom";
+import EmployeeService from '../services/EmployeeService';
 
 class CreateClient extends Component {
     constructor(props) {
@@ -34,10 +35,14 @@ class CreateClient extends Component {
 
     saveClient = (e) => {
         e.preventDefault();
-
         let client = { fullName: this.state.fullName, email: this.state.email, password: this.state.password };
         console.log("client=>" + JSON.stringify(client))
 
+        EmployeeService.createClient(client).then(res => {
+            this.props.history.push("/Clients");
+        });
+
+        alert("User has been created")
 
     }
 
@@ -66,8 +71,9 @@ class CreateClient extends Component {
                             </div>
                         </form>
 
+
                         <Button color='green' text='Save' onClick={this.saveClient} />
-                        
+
                         <Link to={`/Clients`}><Button color='red' text='Cancel' /></Link>
 
                     </div>
