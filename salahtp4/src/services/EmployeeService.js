@@ -10,16 +10,16 @@ class EmployeeService {
         return axios.get(CLIENTS_API_BASE_URL)
     }
 
-    getEmployees(){
+    getEmployees() {
         return axios.get(EMPLOYEES_API_BASE_URL)
     }
 
 
-    createClient(client){
-        return axios.post(CLIENTS_API_BASE_URL,client);
+    createClient(client) {
+        return axios.post(CLIENTS_API_BASE_URL, client);
     }
 
-    getDocuments(){
+    getDocuments() {
         return axios.get(DOCUMETNS_API_BASE_URL);
     }
 

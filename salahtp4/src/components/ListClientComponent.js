@@ -12,9 +12,7 @@ class ListClientComponent extends Component {
         this.state = {
             clients: []
         }
-
         this.addClient = this.addClient.bind(this);
-
     }
 
     addClient(){

@@ -24,7 +24,7 @@ class ListDocuments extends Component {
             <>
                 <div className='options'>
                     <div class="container">
-                        <h2>Documents List</h2>
+                        <h2>Liste De Document</h2>
                         <ul class="responsive-table">
                             <li class="table-header">
                                 <div class="col col-1">Titre</div>
@@ -48,7 +48,7 @@ class ListDocuments extends Component {
                                         <div class="col col-2" >{document.documentType}</div>
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
-                                        <div class="col col-2" ><Button color='green' text='Emprunter' onClick={this.addClient} /></div>
+                                        <div class="col col-2" ><Button color='green' text='Emprunter'/></div>
                                     </li>
                                 )}
                             </div>

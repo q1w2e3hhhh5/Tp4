@@ -25,3 +25,5 @@ function App() {
   );
 }
 export default App;
+
+//might wanna add a nav bar to ease the navigation

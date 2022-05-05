@@ -7,20 +7,20 @@ import '../App.css';
 export default function employees() {
     return (
         <>
-        <div className='options'>
-        <h2>employee</h2>
-        <Link to={`/ClientsWLogin`}><Button color='green' text='List of Clients' /></Link>
+            <div className='options'>
+                <h2>pdv employé</h2>
+                <Link to={`/ClientsWLogin`}><Button color='green' text='List of Clients' /></Link>
 
-        
+                <Button color='green' text='Recherché Client' />
+                <Button color='green' text='Crée un Document' />
+                <Button color='green' text='Recherché un Document' />
 
-        <Button color='green' text='Search Client' />
-        <Button color='green' text='Search Clients Borrows' />
-        <Button color='green' text='Create Document' />
-        <Button color='green' text='List of borrows' />
-        <Button color='green' text='Search Documents' />
-        <Button color='green' text='All documents' />
-        </div>
+                <Link to={`/DocumentsForEmployee`}>
+                    <Button color='green' text='Tout Les Documents' />
+                </Link>
+
+            </div>
         </>
-        
+
     );
 }
