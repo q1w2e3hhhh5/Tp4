@@ -13,6 +13,7 @@ import ListClients from './components/ListClients';
 import ListDocumentsForClients from './components/ListDocumentsForClients';
 import ListDocumentsForEmployees from './components/ListDocumentsForEmployees';
 import CreateBook from './components/CreateBook';
+import CreateDvd from './components/CreateDvd';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,6 +31,7 @@ root.render(
         <Route path="DocumentsForClient" element={<ListDocumentsForClients />} />
         <Route path="DocumentsForEmployee" element={<ListDocumentsForEmployees />} />
         <Route path="CreateBook" exact element={<CreateBook />} />
+        <Route path="CreateDvd" exact element={<CreateDvd />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

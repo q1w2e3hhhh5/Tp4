@@ -49,7 +49,6 @@ class ListDocuments extends Component {
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
                                         <div class="col col-2" >
-                                            <Button color='red' text='Suprimer'/>
                                             <Button color='green' text='Modifier'/>
                                             </div>
                                     </li>

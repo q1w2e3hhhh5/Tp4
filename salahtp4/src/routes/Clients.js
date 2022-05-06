@@ -14,6 +14,10 @@ export default function clients() {
                 <Link to={`/DocumentsForClient`}>
                     <Button color='green' text='Tout Les Documents De la Bibliothéque' />
                 </Link>
+
+                <Button color='green' text='Cherché Document' />
+
+
             </div>
         </>
 
