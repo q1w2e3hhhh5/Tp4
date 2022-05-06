@@ -37,7 +37,10 @@ class ListClientComponent extends Component {
                                     client => <li className='table-row' key={client.id}>
                                         <div class="col col-1" > {client.fullName} </div>
                                         <div class="col col-2" >{client.email}</div>
-                                        <div class="col col-3" >delete/update/getListOfBorrows</div>
+                                        <div class="col col-3" >
+                                            <Button color='green' text='update'/>
+                                            <Button color='green' text='getListOfBorrows'/>
+                                            </div>
                                     </li>
                                 )}
                             </div>

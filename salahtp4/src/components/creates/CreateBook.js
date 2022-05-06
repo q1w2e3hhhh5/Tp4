@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Button from './Button';
+import Button from '../Button';
 import { Link } from "react-router-dom";
-import EmployeeService from '../services/EmployeeService';
-import '../App.css';
+import EmployeeService from '../../services/EmployeeService';
+import '../../App.css';
 
 class CreateBook extends Component {
     constructor(props) {

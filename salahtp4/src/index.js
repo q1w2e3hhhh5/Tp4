@@ -8,12 +8,14 @@ import Employees from "./routes/Employees";
 import Clients from "./routes/Clients";
 import ListClientComponent from './components/ListClientComponent';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
-import CreateClient from './components/CreateClient';
+import CreateClient from './components/creates/CreateClient';
 import ListClients from './components/ListClients';
 import ListDocumentsForClients from './components/ListDocumentsForClients';
 import ListDocumentsForEmployees from './components/ListDocumentsForEmployees';
-import CreateBook from './components/CreateBook';
-import CreateDvd from './components/CreateDvd';
+import CreateBook from './components/creates/CreateBook';
+import CreateDvd from './components/creates/CreateDvd';
+import CreateCd from './components/creates/CreateCd';
+import SearchDocuments from './routes/SearchDocuments';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -32,6 +34,8 @@ root.render(
         <Route path="DocumentsForEmployee" element={<ListDocumentsForEmployees />} />
         <Route path="CreateBook" exact element={<CreateBook />} />
         <Route path="CreateDvd" exact element={<CreateDvd />} />
+        <Route path="CreateCd" exact element={<CreateCd />} />
+        <Route path="SearchDocuments" exact element={<SearchDocuments />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Button from './Button';
+import Button from '../Button';
 import { Link } from "react-router-dom";
-import EmployeeService from '../services/EmployeeService';
-import '../App.css';
+import EmployeeService from '../../services/EmployeeService';
+import '../../App.css';
 
 class CreateClient extends Component {
     constructor(props) {
@@ -70,7 +70,7 @@ class CreateClient extends Component {
                             </div>
                         </form>
                         <Button color='green' text='Save' onClick={this.saveClient} />
-                        <Link to={`/Clients`}><Button color='red' text='Cancel' /></Link>
+                        <Link to={`/`}><Button color='red' text='Cancel' /></Link>
 
                     </div>
                 </div >

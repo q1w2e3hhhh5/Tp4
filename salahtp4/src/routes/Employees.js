@@ -9,9 +9,14 @@ export default function employees() {
         <>
             <div className='options'>
                 <h2>pdv employé</h2>
-                <Link to={`/ClientsWLogin`}><Button color='green' text='List of Clients' /></Link>
 
-                <Button color='green' text='Recherché Client' />
+                <Link to={`/ClientsWLogin`}>
+                    <Button color='green' text='List of Clients' />
+                </Link>
+
+                <Link to={`/DocumentsForEmployee`}>
+                    <Button color='green' text='Tout Les Documents' />
+                </Link>
 
                 <Link to={`/CreateBook`}>
                     <Button color='green' text='Crée un Livre' />
@@ -21,14 +26,16 @@ export default function employees() {
                     <Button color='green' text='Crée un Dvd' />
                 </Link>
 
-                <Button color='green' text='Crée un Cd' />
-
-
-                <Button color='green' text='Recherché un Document' />
-
-                <Link to={`/DocumentsForEmployee`}>
-                    <Button color='green' text='Tout Les Documents' />
+                <Link to={`/CreateCd`}>
+                    <Button color='green' text='Crée un Cd' />
                 </Link>
+
+                <Link to={`/SearchDocument`}>
+                    <Button color='green' text='Recherché un Document' />
+                </Link>
+
+
+                <Button color='green' text='Recherché Client' />
 
             </div>
         </>

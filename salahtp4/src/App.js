@@ -19,7 +19,6 @@ function App() {
             <Button color='green' text='List Employees' />
           </Link>
         </div>
-
       </div>
     </>
   );

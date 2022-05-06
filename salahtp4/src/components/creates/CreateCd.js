@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Button from './Button';
+import Button from '../Button';
 import { Link } from "react-router-dom";
-import EmployeeService from '../services/EmployeeService';
-import '../App.css';
+import EmployeeService from '../../services/EmployeeService';
+import '../../App.css';
 
-class CreateDvd extends Component {
+class CreateCd extends Component {
     constructor(props) {
         super(props)
 
@@ -14,9 +14,9 @@ class CreateDvd extends Component {
             author: "",
             editor: "",
             category: "",
-            documentType: "Book",
+            documentType: "Cd",
             quantity: "",
-            borrowTimePeriod: "3",
+            borrowTimePeriod: "1",
             timeLength: ""
 
         }
@@ -29,7 +29,7 @@ class CreateDvd extends Component {
         this.changeQuantityHandler = this.changeQuantityHandler.bind(this);
         this.changeTimeLengthHandler = this.changeTimeLengthHandler.bind(this);
 
-        this.saveDvd = this.saveDvd.bind(this);
+        this.saveCd = this.saveCd.bind(this);
     }
 
 
@@ -62,18 +62,18 @@ class CreateDvd extends Component {
     }
 
 
-    saveDvd = (e) => {
+    saveCd = (e) => {
         e.preventDefault();
-        let dvd = {
+        let cd = {
             title: this.state.title, publicationYear: this.state.publicationYear,
             author: this.state.author, editor: this.state.editor,
             category: this.state.category, quantity: this.state.quantity,
             timeLength: this.state.timeLength
         };
-        console.log("dvd=>" + JSON.stringify(dvd))
+        console.log("cd=>" + JSON.stringify(cd))
 
-        EmployeeService.createDvd(dvd).then(res => {
-            this.props.history.push("/Dvd");
+        EmployeeService.createDvd(cd).then(res => {
+            this.props.history.push("/Cd");
         });
 
         alert("Le document à été Crée")
@@ -85,7 +85,7 @@ class CreateDvd extends Component {
             <>
                 <div className='options'>
                     <div>
-                        <h3>Ajouter Dvd</h3>
+                        <h3>Ajouter Cd</h3>
                         <form>
                             <div className='block'>
                                 <label>Titre:</label>
@@ -123,7 +123,7 @@ class CreateDvd extends Component {
                                     value={this.state.timeLength} onChange={this.changeTimeLengthHandler} />
                             </div>
                         </form>
-                        <Button color='green' text='Save' onClick={this.saveDvd} />
+                        <Button color='green' text='Save' onClick={this.saveCd} />
                         <Link to={`/Employees`}><Button color='red' text='Annuler' /></Link>
                     </div>
                 </div>
@@ -133,4 +133,4 @@ class CreateDvd extends Component {
 }
 
 
-export default CreateDvd
+export default CreateCd
