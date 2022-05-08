@@ -5,6 +5,7 @@ const EMPLOYEES_API_BASE_URL = "http://localhost:8085/api/v1/Employees";
 const BOOK_API_BASE_URL = "http://localhost:8085/api/v1/Book";
 const DOCUMENTS_API_BASE_URL = "http://localhost:8085/api/v1/Documents";
 const CLIENT_API_BASE_URL = "http://localhost:8085/api/v1/Client";
+const BORROWS_API_BASE_URL = "http://localhost:8085/api/v1/Borrows";
 
 class EmployeeService {
 
@@ -44,6 +45,11 @@ class EmployeeService {
     updateClient(client, clientId){
         return axios.put(CLIENT_API_BASE_URL,'/',clientId,client)
     }
+
+    getBorrowsByClientId(id){
+        return axios.get(BORROWS_API_BASE_URL+'/'+id)
+    }
+
 
 }
 

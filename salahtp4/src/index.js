@@ -15,8 +15,8 @@ import ListDocumentsForEmployees from './components/ListDocumentsForEmployees';
 import CreateBook from './components/creates/CreateBook';
 import CreateDvd from './components/creates/CreateDvd';
 import CreateCd from './components/creates/CreateCd';
-import SearchDocuments from './routes/SearchDocuments';
 import UpdateClient from './components/Updates/UpdateClient';
+import MyDocuments from './components/MyDocuments';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -36,8 +36,8 @@ root.render(
         <Route path="CreateBook" exact element={<CreateBook />} />
         <Route path="CreateDvd" exact element={<CreateDvd />} />
         <Route path="CreateCd" exact element={<CreateCd />} />
-        <Route path="SearchDocuments" exact element={<SearchDocuments />} />
         <Route path="Client/:id" element={<UpdateClient />} />
+        <Route path="Mydocument/*" element={<MyDocuments />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

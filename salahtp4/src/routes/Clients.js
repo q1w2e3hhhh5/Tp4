@@ -1,23 +1,40 @@
 import Button from '../../src/components/Button';
 import '../App.css';
 import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+
+
+class Clients extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            userId: window.location.href.split('/').pop()
+        }
+
+    }
 
 
 
-export default function clients() {
-    return (
-        <>
+    render() {
+        return (
             <div className='options'>
                 <h2>pdv Clients</h2>
-                <Button color='green' text='Mes Documents' />
+               
+                <Link to={`/MyDocument/${this.state.userId}`}>
+                    <Button color='green' text='Mes Documents' />
 
+                </Link>
                 <Link to={`/DocumentsForClient`}>
                     <Button color='green' text='Tout Les Documents De la Bibliothéque' />
                 </Link>
 
             </div>
-        </>
+        )
+    }
 
 
-    );
+
 }
+export default Clients
