@@ -4,6 +4,7 @@ const CLIENTS_API_BASE_URL = "http://localhost:8085/api/v1/Clients";
 const EMPLOYEES_API_BASE_URL = "http://localhost:8085/api/v1/Employees";
 const BOOK_API_BASE_URL = "http://localhost:8085/api/v1/Book";
 const DOCUMENTS_API_BASE_URL = "http://localhost:8085/api/v1/Documents";
+const CLIENT_API_BASE_URL = "http://localhost:8085/api/v1/Client";
 
 class EmployeeService {
 
@@ -34,6 +35,12 @@ class EmployeeService {
     getDocuments() {
         return axios.get(DOCUMENTS_API_BASE_URL);
     }
+
+
+    getClientById(id){
+        return axios.get(CLIENT_API_BASE_URL+'/'+id)
+    }
+
 }
 
 export default new EmployeeService()

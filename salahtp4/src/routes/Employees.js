@@ -30,12 +30,6 @@ export default function employees() {
                     <Button color='green' text='Crée un Cd' />
                 </Link>
 
-                <Link to={`/SearchDocument`}>
-                    <Button color='green' text='Recherché un Document' />
-                </Link>
-
-
-                <Button color='green' text='Recherché Client' />
 
             </div>
         </>

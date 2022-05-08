@@ -43,7 +43,7 @@ class ListClientComponent extends Component {
                                         <div class="col col-1" > {client.fullName} </div>
                                         <div class="col col-2" >{client.email}</div>
                                         <div class="col col-3" >
-                                            <Link to={`/Client/${client.id}`}>
+                                            <Link to={`/ClientInterface/${client.id}`}>
                                                 <Button color='green' text='Log in' />
                                             </Link>
                                         </div>

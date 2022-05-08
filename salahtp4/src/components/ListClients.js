@@ -12,7 +12,15 @@ class ListClientComponent extends Component {
         this.state = {
             clients: []
         }
+
+        this.editClient = this.editClient.bind(this);
     }
+
+
+    editClient(id) {
+        this.props.history.push(`/UpdateClient/${id}`)
+    }
+
 
     componentDidMount() {
         EmployeeService.getClients().then((res) => {
@@ -38,9 +46,15 @@ class ListClientComponent extends Component {
                                         <div class="col col-1" > {client.fullName} </div>
                                         <div class="col col-2" >{client.email}</div>
                                         <div class="col col-3" >
-                                            <Button color='green' text='update'/>
-                                            <Button color='green' text='getListOfBorrows'/>
-                                            </div>
+                                            <Link to={`/Client/${client.id}`}>
+                                                <Button color='green' text='update' />
+                                            </Link>
+
+
+
+                                            <Button color='green' text='getListOfBorrows' />
+
+                                        </div>
                                     </li>
                                 )}
                             </div>

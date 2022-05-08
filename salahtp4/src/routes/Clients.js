@@ -15,9 +15,6 @@ export default function clients() {
                     <Button color='green' text='Tout Les Documents De la Bibliothéque' />
                 </Link>
 
-                <Button color='green' text='Cherché Document' />
-
-
             </div>
         </>
 
