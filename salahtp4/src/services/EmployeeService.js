@@ -41,6 +41,10 @@ class EmployeeService {
         return axios.get(CLIENT_API_BASE_URL+'/'+id)
     }
 
+    updateClient(client, clientId){
+        return axios.put(CLIENT_API_BASE_URL,'/',clientId,client)
+    }
+
 }
 
 export default new EmployeeService()

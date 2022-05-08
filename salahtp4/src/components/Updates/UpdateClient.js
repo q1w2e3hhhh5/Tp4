@@ -55,9 +55,9 @@ class UpdateClient extends Component {
         let client = { fullName: this.state.fullName, email: this.state.email, password: this.state.password };
         console.log("client=>" + JSON.stringify(client))
 
-
-
-        alert("User has been updated")
+        EmployeeService.updateClient(client,this.state.id).then(res => {
+            this.props.history.push("/Clients")})
+        alert("CORS POLICY ERROR :  Client is changed but not updated ") ;
 
     }
 
