@@ -49,6 +49,10 @@ class EmployeeService {
         return axios.put(CLIENT_API_BASE_URL+'/'+clientId,client)
     }
 
+    updateDocument(document,documentId){
+        return axios.put(DOCUMENTS_API_BASE_URL+'/'+documentId,document)
+    }
+
     getBorrowsByClientId(id){
         return axios.get(BORROWS_API_BASE_URL+'/'+id)
     }

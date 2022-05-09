@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EmployeeService from '../services/EmployeeService';
 import '../App.css'
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 class ListDocuments extends Component {
 
@@ -49,8 +50,10 @@ class ListDocuments extends Component {
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
                                         <div class="col col-2" >
-                                            <Button color='green' text='Modifier'/>
-                                            </div>
+                                            <Link to={`/Document/${document.id}`}>
+                                                <Button color='green' text='Modifier' />
+                                            </Link>
+                                        </div>
                                     </li>
                                 )}
                             </div>

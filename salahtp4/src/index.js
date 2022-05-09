@@ -18,6 +18,7 @@ import CreateCd from './components/creates/CreateCd';
 import UpdateClient from './components/Updates/UpdateClient';
 import MyDocuments from './components/MyDocuments';
 import ListOfBorrows from './components/ListOfBorrows';
+import UpdateDocument from './components/Updates/UpdateDocument';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -38,6 +39,7 @@ root.render(
         <Route path="CreateDvd" exact element={<CreateDvd />} />
         <Route path="CreateCd" exact element={<CreateCd />} />
         <Route path="Client/:id" element={<UpdateClient />} />
+        <Route path="Document/:id" element={<UpdateDocument />} />
         <Route path="Mydocument/*" element={<MyDocuments />} />
         <Route path="ListOfBorrows/*" element={<ListOfBorrows />} />
       </Routes>

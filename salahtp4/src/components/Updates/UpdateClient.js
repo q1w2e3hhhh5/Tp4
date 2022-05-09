@@ -84,8 +84,8 @@ class UpdateClient extends Component {
                                     value={this.state.password} onChange={this.changePasswordHandler} />
                             </div>
                         </form>
-                        <Button color='green' text='Save' onClick={this.updateClient} />
-                        <Link to={`/ClientsWLogin`}><Button color='red' text='Cancel' /></Link>
+                        <Button color='green' text='Enregistrer' onClick={this.updateClient} />
+                        <Link to={`/ClientsWLogin`}><Button color='red' text='Annuler' /></Link>
                     </div>
                 </div >
             </div >

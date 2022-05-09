@@ -69,6 +69,5 @@ class ListClientComponent extends Component {
         )
     }
 }
-/* must add delete client and create client */
 
 export default ListClientComponent
