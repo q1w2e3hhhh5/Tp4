@@ -37,6 +37,9 @@ class EmployeeService {
         return axios.get(DOCUMENTS_API_BASE_URL);
     }
 
+    getDocumentById(id){
+        return axios.get(DOCUMENTS_API_BASE_URL+'/'+id)
+    }
 
     getClientById(id){
         return axios.get(CLIENT_API_BASE_URL+'/'+id)
@@ -50,8 +53,8 @@ class EmployeeService {
         return axios.get(BORROWS_API_BASE_URL+'/'+id)
     }
 
-    borrowDocument(userId, documentId){
-       return axios.post(BORROWS_API_BASE_URL+'/'+userId,documentId)
+    borrowDocument(userId, document){
+       return axios.post(BORROWS_API_BASE_URL+'/'+userId,document)
     }
 
 

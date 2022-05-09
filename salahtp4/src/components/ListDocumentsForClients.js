@@ -32,7 +32,8 @@ class ListDocuments extends Component {
     changeDocumentId(id){
         this.setState({selectedDocumentId: id})
         console.log(id)
-        EmployeeService.borrowDocument(id,window.location.href.split('/').pop())
+        EmployeeService.borrowDocument(window.location.href.split('/').pop()
+        ,EmployeeService.getDocumentById(id))
 
     }
 
