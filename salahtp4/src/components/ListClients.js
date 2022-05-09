@@ -51,9 +51,9 @@ class ListClientComponent extends Component {
                                             </Link>
 
 
-
-                                            <Button color='green' text='getListOfBorrows' />
-
+                                            <Link to={`/ListOfBorrows/${client.id}`}>
+                                                <Button color='green' text='getListOfBorrows' />
+                                            </Link>
                                         </div>
                                     </li>
                                 )}

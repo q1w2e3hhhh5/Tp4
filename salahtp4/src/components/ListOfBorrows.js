@@ -1,35 +1,22 @@
 import React, { Component } from 'react';
 import EmployeeService from '../services/EmployeeService';
 import '../App.css'
-import Button from './Button';
 
-class ListDocuments extends Component {
+class ListOfBorrows extends Component {
 
     constructor(props) {
         super(props)
 
         this.state = {
-            documents: [],
-            userId: window.location.href.split('/').pop(),
+            documents: []
         }
-
-        this.changeDocumentId = this.changeDocumentId.bind(this);
-
-
     }
 
     componentDidMount() {
-        EmployeeService.getDocuments().then((res) => {
+        EmployeeService.getBorrowsByClientId(window.location.href.split('/').pop())
+        .then((res) => {
             this.setState({ documents: res.data });
         });
-    }
-
-    changeDocumentId(id){
-        this.setState({selectedDocumentId: id})
-        console.log(id)
-        EmployeeService.borrowDocument(window.location.href.split('/').pop()
-        ,EmployeeService.getDocumentById(id))
-
     }
 
     render() {
@@ -48,11 +35,10 @@ class ListDocuments extends Component {
                                 <div class="col col-2">Type De Document</div>
                                 <div class="col col-2">Qunatité</div>
                                 <div class="col col-2">Limite De Semaine D'Emprunt</div>
-                                <div class="col col-2">Action</div>
                             </li>
                             <div>
                                 {this.state.documents.map(
-                                    document => <li className='table-row' key={document.id}>
+                                    document => <li className='table-row' key={document.document}>
                                         <div class="col col-1" > {document.title} </div>
                                         <div class="col col-2" >{document.publicationYear}</div>
                                         <div class="col col-2" >{document.author}</div>
@@ -61,9 +47,6 @@ class ListDocuments extends Component {
                                         <div class="col col-2" >{document.documentType}</div>
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
-                                        <div class="col col-2" >
-                                            <Button color='green' text='Emprunter' onClick={ () => this.changeDocumentId(document.id)} />
-                                        </div>
                                     </li>
                                 )}
                             </div>
@@ -75,4 +58,4 @@ class ListDocuments extends Component {
     }
 }
 
-export default ListDocuments
+export default ListOfBorrows
