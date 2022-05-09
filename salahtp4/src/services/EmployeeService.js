@@ -43,7 +43,7 @@ class EmployeeService {
     }
 
     updateClient(client, clientId){
-        return axios.put(CLIENT_API_BASE_URL,'/',clientId,client)
+        return axios.put(CLIENT_API_BASE_URL+'/'+clientId,client)
     }
 
     getBorrowsByClientId(id){

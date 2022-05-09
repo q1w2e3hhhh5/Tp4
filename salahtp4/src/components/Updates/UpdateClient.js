@@ -57,7 +57,7 @@ class UpdateClient extends Component {
 
         EmployeeService.updateClient(client,this.state.id).then(res => {
             this.props.history.push("/Clients")})
-        alert("CORS POLICY ERROR :  Client is changed but not updated ") ;
+        alert("Le client a été mis à jours") ;
 
     }
 
