@@ -26,7 +26,7 @@ class Clients extends Component {
                     <Button color='green' text='Mes Documents' />
 
                 </Link>
-                <Link to={`/DocumentsForClient`}>
+                <Link to={`/DocumentsForClient/${this.state.userId}`}>
                     <Button color='green' text='Tout Les Documents De la Bibliothéque' />
                 </Link>
 

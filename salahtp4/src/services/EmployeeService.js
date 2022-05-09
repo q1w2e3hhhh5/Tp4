@@ -50,6 +50,10 @@ class EmployeeService {
         return axios.get(BORROWS_API_BASE_URL+'/'+id)
     }
 
+    borrowDocument(userId, documentId){
+       return axios.post(BORROWS_API_BASE_URL+'/'+userId,documentId)
+    }
+
 
 }
 

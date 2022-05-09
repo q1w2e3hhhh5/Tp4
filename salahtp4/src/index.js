@@ -31,7 +31,7 @@ root.render(
         <Route path="Employees" element={<ListEmployeeComponent />} />
         <Route path="CreateClient" element={<CreateClient />} />
         <Route path="ClientsWLogin" element={<ListClients />} />
-        <Route path="DocumentsForClient" element={<ListDocumentsForClients />} />
+        <Route path="DocumentsForClient/*" element={<ListDocumentsForClients />} />
         <Route path="DocumentsForEmployee" element={<ListDocumentsForEmployees />} />
         <Route path="CreateBook" exact element={<CreateBook />} />
         <Route path="CreateDvd" exact element={<CreateDvd />} />

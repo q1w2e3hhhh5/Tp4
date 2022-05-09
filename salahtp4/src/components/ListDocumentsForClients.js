@@ -9,14 +9,31 @@ class ListDocuments extends Component {
         super(props)
 
         this.state = {
-            documents: []
+            documents: [],
+            userId: window.location.href.split('/').pop(),
         }
+
+        this.changeDocumentId = this.changeDocumentId.bind(this);
+
+
     }
 
     componentDidMount() {
         EmployeeService.getDocuments().then((res) => {
             this.setState({ documents: res.data });
         });
+    }
+
+    borrowDocument(id) {
+        //EmployeeService.borrowDocument(window.location.href.split('/').pop(),id)
+
+    }
+
+    changeDocumentId(id){
+        this.setState({selectedDocumentId: id})
+        console.log(id)
+        EmployeeService.borrowDocument(id,window.location.href.split('/').pop())
+
     }
 
     render() {
@@ -39,7 +56,7 @@ class ListDocuments extends Component {
                             </li>
                             <div>
                                 {this.state.documents.map(
-                                    document => <li className='table-row' key={document.document}>
+                                    document => <li className='table-row' key={document.id}>
                                         <div class="col col-1" > {document.title} </div>
                                         <div class="col col-2" >{document.publicationYear}</div>
                                         <div class="col col-2" >{document.author}</div>
@@ -48,7 +65,9 @@ class ListDocuments extends Component {
                                         <div class="col col-2" >{document.documentType}</div>
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
-                                        <div class="col col-2" ><Button color='green' text='Emprunter'/></div>
+                                        <div class="col col-2" >
+                                            <Button color='green' text='Emprunter' onClick={ () => this.changeDocumentId(document.id)} />
+                                        </div>
                                     </li>
                                 )}
                             </div>

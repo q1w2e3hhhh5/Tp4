@@ -86,7 +86,6 @@ class UpdateClient extends Component {
                         </form>
                         <Button color='green' text='Save' onClick={this.updateClient} />
                         <Link to={`/ClientsWLogin`}><Button color='red' text='Cancel' /></Link>
-
                     </div>
                 </div >
             </div >
