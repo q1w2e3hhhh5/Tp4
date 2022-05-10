@@ -11,13 +11,28 @@ class MyDocuments extends Component {
         this.state = {
             documents: []
         }
+
+        this.deleteDocument = this.deleteDocument.bind(this);
+
     }
 
     componentDidMount() {
         EmployeeService.getBorrowsByClientId(window.location.href.split('/').pop())
-        .then((res) => {
-            this.setState({ documents: res.data });
-        });
+            .then((res) => {
+                this.setState({ documents: res.data });
+            });
+    }
+
+
+    deleteDocument(id) {
+        console.log(id);
+
+        EmployeeService.deleteDocument(id).then(res => {
+            this.setState({documents: this.state.documents.filter(document => document.id !== id)});
+        })
+
+
+
     }
 
     render() {
@@ -40,7 +55,7 @@ class MyDocuments extends Component {
                             </li>
                             <div>
                                 {this.state.documents.map(
-                                    document => <li className='table-row' key={document.document}>
+                                    document => <li className='table-row' key={document.id}>
                                         <div class="col col-1" > {document.title} </div>
                                         <div class="col col-2" >{document.publicationYear}</div>
                                         <div class="col col-2" >{document.author}</div>
@@ -50,8 +65,8 @@ class MyDocuments extends Component {
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
                                         <div class="col col-2" >
-                                            <Button color='red' text='Return'/>
-                                            </div>
+                                            <Button color='red' text='Return' onClick={ ()=>this.deleteDocument(document.id)} />
+                                        </div>
                                     </li>
                                 )}
                             </div>

@@ -61,6 +61,10 @@ class EmployeeService {
        return axios.post(BORROWS_API_BASE_URL+'/'+userId,document)
     }
 
+    deleteDocument(id){
+        return axios.delete(BORROWS_API_BASE_URL+'/'+id)
+    }
+
 
 }
 

@@ -24,6 +24,7 @@ class ListDocuments extends Component {
         });
     }
 
+
     changeDocumentId(id){
         this.setState({selectedDocumentId: id})
         console.log(id)
