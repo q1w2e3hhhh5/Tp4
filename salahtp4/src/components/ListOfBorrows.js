@@ -14,9 +14,9 @@ class ListOfBorrows extends Component {
 
     componentDidMount() {
         EmployeeService.getBorrowsByClientId(window.location.href.split('/').pop())
-        .then((res) => {
-            this.setState({ documents: res.data });
-        });
+            .then((res) => {
+                this.setState({ documents: res.data });
+            });
     }
 
     render() {

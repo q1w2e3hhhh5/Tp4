@@ -55,9 +55,10 @@ class UpdateClient extends Component {
         let client = { fullName: this.state.fullName, email: this.state.email, password: this.state.password };
         console.log("client=>" + JSON.stringify(client))
 
-        EmployeeService.updateClient(client,this.state.id).then(res => {
-            this.props.history.push("/Clients")})
-        alert("Le client a été mis à jours") ;
+        EmployeeService.updateClient(client, this.state.id).then(res => {
+            this.props.history.push("/Clients")
+        })
+        alert("Le client a été mis à jours");
 
     }
 

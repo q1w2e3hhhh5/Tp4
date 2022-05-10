@@ -15,13 +15,11 @@ class Clients extends Component {
 
     }
 
-
-
     render() {
         return (
             <div className='options'>
                 <h2>pdv Clients</h2>
-               
+
                 <Link to={`/MyDocument/${this.state.userId}`}>
                     <Button color='green' text='Mes Documents' />
 

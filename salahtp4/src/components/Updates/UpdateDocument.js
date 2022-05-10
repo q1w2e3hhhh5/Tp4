@@ -86,7 +86,7 @@ class UpdateClient extends Component {
         };
         console.log("Doc=>" + JSON.stringify(document))
 
-        EmployeeService.updateDocument(document,this.state.documentId).then(res => {
+        EmployeeService.updateDocument(document, this.state.documentId).then(res => {
             this.props.history.push("/Documents");
         });
 

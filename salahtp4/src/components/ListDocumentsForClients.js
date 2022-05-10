@@ -7,7 +7,7 @@ class ListDocuments extends Component {
 
     constructor(props) {
         super(props)
-    
+
         this.state = {
             documents: [],
             userId: window.location.href.split('/').pop(),
@@ -25,13 +25,13 @@ class ListDocuments extends Component {
     }
 
 
-   async changeDocumentId(id){
-        this.setState({selectedDocumentId: id})
+    async changeDocumentId(id) {
+        this.setState({ selectedDocumentId: id })
         console.log(id)
         console.log(EmployeeService.getDocumentById(id))
         EmployeeService.borrowDocument(window.location.href.split('/').pop()
-        ,EmployeeService.getDocumentById(id))
-       
+            , EmployeeService.getDocumentById(id))
+
 
     }
 
@@ -65,7 +65,7 @@ class ListDocuments extends Component {
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
                                         <div class="col col-2" >
-                                            <Button color='green' text='Emprunter' onClick={ () => this.changeDocumentId(document.id)} />
+                                            <Button color='green' text='Emprunter' onClick={() => this.changeDocumentId(document.id)} />
                                         </div>
                                     </li>
                                 )}

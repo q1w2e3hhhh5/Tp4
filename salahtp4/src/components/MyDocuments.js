@@ -28,7 +28,7 @@ class MyDocuments extends Component {
         console.log(id);
 
         EmployeeService.deleteDocument(id).then(res => {
-            this.setState({documents: this.state.documents.filter(document => document.id !== id)});
+            this.setState({ documents: this.state.documents.filter(document => document.id !== id) });
         })
     }
 
@@ -62,7 +62,7 @@ class MyDocuments extends Component {
                                         <div class="col col-2" >{document.quantity}</div>
                                         <div class="col col-2" >{document.borrowTRimePeriod}</div>
                                         <div class="col col-2" >
-                                            <Button color='red' text='Return' onClick={ ()=>this.deleteDocument(document.id)} />
+                                            <Button color='red' text='Return' onClick={() => this.deleteDocument(document.id)} />
                                         </div>
                                     </li>
                                 )}
