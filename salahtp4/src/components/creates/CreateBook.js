@@ -131,6 +131,4 @@ class CreateBook extends Component {
         )
     }
 }
-
-
 export default CreateBook

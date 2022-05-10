@@ -36,8 +36,8 @@ class ListClientComponent extends Component {
                         <h2>Clients List</h2>
                         <ul class="responsive-table">
                             <li class="table-header">
-                                <div class="col col-1">Full Name</div>
-                                <div class="col col-2">Email</div>
+                                <div class="col col-1">Nom complet</div>
+                                <div class="col col-2">Courriels</div>
                                 <div class="col col-2">Action</div>
                             </li>
                             <div>
@@ -47,12 +47,12 @@ class ListClientComponent extends Component {
                                         <div class="col col-2" >{client.email}</div>
                                         <div class="col col-3" >
                                             <Link to={`/Client/${client.id}`}>
-                                                <Button color='green' text='update' />
+                                                <Button color='green' text='Mettre à Jour' />
                                             </Link>
 
 
                                             <Link to={`/ListOfBorrows/${client.id}`}>
-                                                <Button color='green' text='getListOfBorrows' />
+                                                <Button color='green' text='Emprunts' />
                                             </Link>
                                         </div>
                                     </li>
@@ -61,7 +61,7 @@ class ListClientComponent extends Component {
                         </ul>
                     </div>
                     <Link to={`/CreateClient`}>
-                        <Button color='green' text='Add Client' onClick={this.addClient} />
+                        <Button color='green' text='Ajouter Un Client' onClick={this.addClient} />
                     </Link>
 
                 </div>

@@ -13,7 +13,6 @@ Button.defaultProps = {
     color: 'green'
 }
 
-//impt pour importer les PropTypes
 Button.propTypes = {
     text: PropTypes.string,
     color: PropTypes.string

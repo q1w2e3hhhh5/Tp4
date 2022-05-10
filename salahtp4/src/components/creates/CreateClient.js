@@ -70,7 +70,7 @@ class CreateClient extends Component {
                             </div>
                         </form>
                         <Button color='green' text='Save' onClick={this.saveClient} />
-                        <Link to={`/`}><Button color='red' text='Cancel' /></Link>
+                        <Link to={`/`}><Button color='red' text='Anuller' /></Link>
 
                     </div>
                 </div >
@@ -78,6 +78,4 @@ class CreateClient extends Component {
         )
     }
 }
-
-
 export default CreateClient

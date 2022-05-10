@@ -30,9 +30,6 @@ class MyDocuments extends Component {
         EmployeeService.deleteDocument(id).then(res => {
             this.setState({documents: this.state.documents.filter(document => document.id !== id)});
         })
-
-
-
     }
 
     render() {
